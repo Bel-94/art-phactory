@@ -127,6 +127,9 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -138,4 +141,12 @@ STATICFILES_DIRS = [
 #   cloud_name = "dz275mqsc", 
 #   api_key = "883538243664336", 
 #   api_secret = "kqfJDF9jde3JHj9ezi6TNz8s-HM",
+    # secure = True,
 # )
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dz275mqsc',
+    'API_KEY': '883538243664336',
+    'API_SECRET': 'kqfJDF9jde3JHj9ezi6TNz8s-HM',
+    'SECURE':'True',
+}
