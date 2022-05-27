@@ -11,10 +11,16 @@ def welcome(request):
     return render (request, 'index.html', {"images":images, "location":location})
 
 def all_images(request,image_id):
-    pass
+    location=Location.get_locations()
+
+    image = Image.get_image_by_id(image_id)
+    return render(request, {"image" : image,"location":location})
 
 def image_location(request,location_name):
-    pass
+    location=Location.get_locations()
+    image= Image.fetch_by_location(location_name)
+    message = f"{location_name}"
+    return render(request, 'img_location.html',{"message":message,"image": image,"location":location})
 
 def search_cat(request):
     location=Location.get_locations()
