@@ -1,5 +1,5 @@
 from django.db import models
-# from cloudinary.models import CloudinaryField
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -36,7 +36,7 @@ class Image(models.Model):
     category = models.ForeignKey(Category,on_delete=models.CASCADE,default='0')
     location = models.ForeignKey(Location ,on_delete=models.CASCADE,default='0')
     # image=models.ImageField(upload_to='img/',blank = True)
-    # image = CloudinaryField('image')
+    image = CloudinaryField('image', null = True)
     pub_date = models.DateTimeField(auto_now_add=True,null=True)
 
     def __str__(self):
