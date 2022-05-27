@@ -12,8 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
-# import cloudinary, cloudinary.uploader, cloudinary.api
-# import cloudinary_storage
+import cloudinary, cloudinary.uploader, cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,8 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gallery',
-    'bootstrap3',
-    # 'cloudinary',
+    'bootstrap5',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -138,15 +137,15 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # adding config
-# cloudinary.config( 
-#   cloud_name = "dz275mqsc", 
-#   api_key = "883538243664336", 
-#   api_secret = "kqfJDF9jde3JHj9ezi6TNz8s-HM" 
-# )
+cloudinary.config( 
+  cloud_name = "dz275mqsc", 
+  api_key = "883538243664336", 
+  api_secret = "kqfJDF9jde3JHj9ezi6TNz8s-HM" 
+)
 
-# CLOUDINARY_STORAGE = {
-#     'CLOUD_NAME': 'dz275mqsc',
-#     'API_KEY': '883538243664336',
-#     'API_SECRET': 'kqfJDF9jde3JHj9ezi6TNz8s-HM',
-#     'SECURE':'True',
-# }
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dz275mqsc',
+    'API_KEY': '883538243664336',
+    'API_SECRET': 'kqfJDF9jde3JHj9ezi6TNz8s-HM',
+    'SECURE':'True',
+}
