@@ -12,12 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
-# import cloudinary
-# import cloudinary.uploader
-# import cloudinary.api
+# import cloudinary, cloudinary.uploader, cloudinary.api
 # import cloudinary_storage
-# from decouple import config,Csv
-# import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -56,7 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'art.urls'
@@ -131,7 +127,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
@@ -144,13 +140,12 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # cloudinary.config( 
 #   cloud_name = "dz275mqsc", 
 #   api_key = "883538243664336", 
-#   api_secret = "kqfJDF9jde3JHj9ezi6TNz8s-HM",
-    # secure = True,
+#   api_secret = "kqfJDF9jde3JHj9ezi6TNz8s-HM" 
 # )
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dz275mqsc',
-    'API_KEY': '883538243664336',
-    'API_SECRET': 'kqfJDF9jde3JHj9ezi6TNz8s-HM',
-    'SECURE':'True',
-}
+# CLOUDINARY_STORAGE = {
+#     'CLOUD_NAME': 'dz275mqsc',
+#     'API_KEY': '883538243664336',
+#     'API_SECRET': 'kqfJDF9jde3JHj9ezi6TNz8s-HM',
+#     'SECURE':'True',
+# }
