@@ -1,4 +1,12 @@
 #welcome_text {
     font-size: 35pt;
-    color: #fff;
+    color: #C3392A;
+}
+
+
+#home {
+    text-align: center;
+    background-image: url("//static/img/background.html");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
