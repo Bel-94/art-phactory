@@ -14,7 +14,7 @@
         </div>
     </div>
 </div>
-<h1 class='text-center' style="font-style: italic;"> <em>Arcade</em> </h1>
+<h1 class='text-center' style="font-style: italic; color: #C3392A"> <em>Arcade</em> </h1>
 <div class="container-fluid">
     <hr />
     {% for img in images%}
@@ -39,8 +39,8 @@
                         <input id="{{img.id}}-url" class="form-control input-md responsive" type="text"
                             value="{{img.image.url}}">
                     </div>
-
-                    <button type="button" onclick="copyToClipboard();">Copy</button>
+                    <div>
+                        <button type="button" onclick="copyToClipboard();">Copy</button>
 
                     <script>
                         function copyToClipboard() {
@@ -51,6 +51,9 @@
                             alert('url copied');
                         }
                     </script>
+                    </div>
+
+                    
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
