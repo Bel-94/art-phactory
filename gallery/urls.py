@@ -1,6 +1,7 @@
 from django.conf import Settings, settings
 from django.urls import re_path, path
 from . import views
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -10,5 +11,5 @@ urlpatterns = [
     re_path(r'^location/(?P<location_name>\w+)',views.image_location,name = 'location'),
 ]
 
-# if Settings.DEBUG:
-#     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+if Settings:
+    urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
