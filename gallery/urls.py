@@ -1,5 +1,7 @@
+from django.conf import Settings, settings
 from django.urls import re_path, path
 from . import views
+
 
 urlpatterns = [
     re_path('', views.welcome,name='Gallery'),
@@ -7,3 +9,6 @@ urlpatterns = [
     re_path('^image/(?P<image_id>\d+)/$',views.all_images, name='image'),
     re_path(r'^location/(?P<location_name>\w+)',views.image_location,name = 'location'),
 ]
+
+# if Settings.DEBUG:
+#     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
