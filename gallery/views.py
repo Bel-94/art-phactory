@@ -23,12 +23,12 @@ def image_location(request,location_name):
     return render(request, 'img_location.html',{"message":message,"image": image,"location":location})
 
 def search_cat(request):
-    location=Location.get_locations()
 
     if 'category' in request.GET and request.GET["category"]:
-        category = request.GET.get("category")
-        search = Image.search_by_category(category)
-        message = f"{category}"
-        return render(request, 'search.html',{"message":message,"category": search,"location":location})
+        search_term = request.GET.get("category")
+        found_images = Image.search_by_category(search_term)
+        message = f"{search_term}"
+        return render(request, 'search.html',{"message":message,'images':found_images})
     else:
-        return render(request, 'search.html')
+        message = "You haven't searched for any images"
+        return render(request, 'search.html', {'message':message})
