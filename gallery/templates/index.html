@@ -17,8 +17,9 @@
 <h1 class='text-center' style="font-style: italic; color: #C3392A"> <em>Arcade</em> </h1>
 <div class="container-fluid">
     <hr />
-    {% for img in images%}
-    <div class="col-lg-3">
+    <div class="row p-4">
+        {% for img in images%}
+    <div class = "col-md-4" data-toggle ="modal">
         <a href="#{{img.id}}" data-toggle="modal" data-target="#{{img.id}}">
             <img src="{{img.image.url}}" class="img-responsive" alt="{{image.name}}" style="width:100%;width:100%">
             <h5 class="text-center">{{img.image_name}}</h5>
@@ -61,6 +62,7 @@
 
     </div>
     {%endfor%}
+    </div>
 </div>
 
 <footer class="footer">
