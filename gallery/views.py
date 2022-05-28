@@ -1,3 +1,4 @@
+from unicodedata import category
 from django.shortcuts import render
 from .models import Location, Image, Category
 from django.http  import HttpResponse, Http404
@@ -24,11 +25,12 @@ def image_location(request,location_name):
 
 def search_cat(request):
 
+    location=Location.get_locations()
+
     if 'category' in request.GET and request.GET["category"]:
-        search_term = request.GET.get("category")
-        found_images = Image.search_by_category(search_term)
-        message = f"{search_term}"
-        return render(request, 'search.html',{"message":message,'images':found_images})
+        category = request.GET.get("category")
+        search = Image.search_by_category(category)
+        message = f"{category}"
+        return render(request, 'search.html',{"message":message,"category": search,"location":location})
     else:
-        message = "You haven't searched for any images"
-        return render(request, 'search.html', {'message':message})
+        return render(request, 'search.html')

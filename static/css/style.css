@@ -6,7 +6,7 @@
 
 #home {
     text-align: center;
-    background-image: url("..//img/background.html");
+    background-image: url("/static/img/background.html");
     background-repeat: no-repeat;
     background-size: cover;
 }
