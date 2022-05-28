@@ -20,29 +20,34 @@
         {% for img in images%}
     <div class = "col-md-4" data-toggle ="modal" data-target="#showPictureModal{{img.id}}">
         <a href="{{img.id}}" data-toggle="modal" data-target="{{img.id}}">
-            <img src="{{img.image.url}}" class="img-responsive" alt="{{img.name}}" style="width:100%;width:100%">
+            <img src="{{img.image.url}}" class="img-responsive" alt="{{img.image_name}}" style="width:100%;width:100%">
             <h5 class="text-center">{{img.image_name}}</h5>
         </a>
         <div class="modal fade" id="showPictureModal{{img.id}}" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">>
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title" id="modalPictureTitle">{{img.image_name}}</h4>
-                        <img src="{{img.image.url}}" class="img-responsive" alt="Image"
-                            style="width:100%;max-width:100%">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        
+                        
                     </div>
                     <div class="modal-body">
+                        <img src="{{img.image.url}}" class="img-responsive" alt="Image"
+                            style="width:100%;max-width:100%">
                         <p class="text-justify">{{img.description}}</p>
                         <p class="text-left"><b>Location:</b> {{img.location}}</p>
                         <p class="text-left"><b>Category:</b> {{img.category}}</p>
-                        <input id="{{img.id}}-url" class="form-control input-md responsive" type="text"
-                            value="{{img.image.url}}">
-                        <a onclick="copyLink({{img.image.url}})"><button type="button" class="btn btn-outline-secondary my-2 my-sm-0 link-btn">Copy
-                            image Link</button></a>
+                        <p>Date Uploaded:{{photo.pub_date}}</p>
+                    
                     </div>
 
-                    
+                    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 padding-1">
+                        <input id="{{img.id}}-url" class="form-control input-md responsive" type="text"
+                            value="{{img.image.url}}">
+                    </div>
+
+                    <button type="button" onclick="copyToClipboard();">Copy</button>
 
                     <script>
                         function copyToClipboard() {
