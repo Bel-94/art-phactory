@@ -147,9 +147,9 @@ cloudinary.config(
   api_secret = "kqfJDF9jde3JHj9ezi6TNz8s-HM" 
 )
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dz275mqsc',
-    'API_KEY': '883538243664336',
-    'API_SECRET': 'kqfJDF9jde3JHj9ezi6TNz8s-HM',
-    'SECURE':'True',
-}
+# CLOUDINARY_STORAGE = {
+#     'CLOUD_NAME': 'dz275mqsc',
+#     'API_KEY': '883538243664336',
+#     'API_SECRET': 'kqfJDF9jde3JHj9ezi6TNz8s-HM',
+#     'SECURE':'True',
+# }
