@@ -18,10 +18,10 @@
         {% if category %}
         {% for category in category %}
         <div class="col-md-3">
-            <a href="#{{category.id}}" data-toggle="modal" data-target="#{{category.id}}">
-                <img src="{{category.image.url}}" class="img-responsive" alt="{{image.name}}"
+            <a href="" data-bs-toggle="modal" data-bs-target="#{{category.id}}">
+                <img src="{{category.image.url}}" class="img-responsive" alt="{{category.image_name}}"
                     style="width:100%;width:100%">
-                    <h5 class="text-center">{{img.image_name}}</h5>
+                    <h5 class="text-center">{{category.image_name}}</h5>
 
             </a>
 
@@ -29,12 +29,14 @@
                 <div class="modal-dialog modal-xl">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <button type="button" id="close"  data-bs-dismiss="modal">&times;</button>
                             <h4 class="modal-title">{{category.image_name}}</h4>
                             <img src="{{category.image.url}}" class="img-responsive" alt="Image"
                                 style="width:100%;max-width:100%">
                         </div>
                         <div class="modal-body">
+                            <h4 class="modal-title" >{{category.image}} </h4>
+                            <img src="{{category.image.url}}" alt="{{category.image_name}}" id="display-img">
                             <p class="text-justify">{{category.description}}</p>
                             <p class="text-left"><b>Location:</b> {{category.location}}</p>
                             <p class="text-left"><b>Category:</b> {{category.category}}</p>

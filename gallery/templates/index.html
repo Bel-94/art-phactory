@@ -5,8 +5,8 @@
 {% block content %}
 {{block.super}}
 
-<div class="container" >
-    <div id="home">
+<div class="container-fluid" id="home">
+    <div >
         <div id="overlay" class="row">
     
             <div class="intro">
@@ -17,7 +17,7 @@
     </div>
 </div>
 <h1 class='text-center' style="font-style: italic; color: #C3392A"> <em>Arcade</em> </h1>
-<div class="container-fluid">
+<div class="container-fluid" id="content">
     <div class="row p-4">
         {% for img in images%}
     <div class = "col-md-4" data-toggle ="modal" data-target="#showPictureModal{{img.id}}">
@@ -45,11 +45,11 @@
                     </div>
 
                     <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 padding-1">
-                        <input id="{{img.id}}-url" class="form-control input-md responsive" type="text"
+                        <input id="{{img.id}}-url"  class="form-control input-md responsive" type="text"
                             value="{{img.image.url}}">
                     </div>
 
-                    <button type="button" onclick="copyToClipboard();">Copy</button>
+                    
 
                     <script>
                         function copyToClipboard() {
@@ -63,6 +63,7 @@
                 
 
                     <div class="modal-footer">
+                        <button type="button" onclick="copyToClipboard();">Copy</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>

@@ -6,9 +6,15 @@
 
 #home {
     text-align: center;
-    background-image: url("/static/img/background.html");
+    background-image: url("../img/magical-6046020__340.jpg");
+    height: 100%;
+    width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+#content {
+    background-color: black;
 }
 
 #description {
