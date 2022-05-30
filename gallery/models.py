@@ -1,3 +1,4 @@
+from unittest import result
 from django.db import models
 from cloudinary.models import CloudinaryField
 
@@ -60,8 +61,12 @@ class Image(models.Model):
 
     @classmethod
     def search_by_category(cls,category):
-        image = cls.objects.filter(category_cat_name_icontains = category)
-        return image
+        images = []
+        result = cls.objects.all()
+        for image in result:
+            if image.category.cat_name == category:
+                images.append(image)
+        return images
 
     @classmethod
     def get_image_by_id(cls, image_id):

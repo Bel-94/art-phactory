@@ -1,5 +1,6 @@
+from multiprocessing import context
 from unicodedata import category
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Location, Image, Category
 from django.http  import HttpResponse, Http404
 import datetime as dt
@@ -10,6 +11,8 @@ def welcome(request):
     location = Location.get_locations()
 
     return render (request, 'index.html', {"images":images, "location":location})
+
+
 
 def all_images(request,image_id):
     location=Location.get_locations()
@@ -23,14 +26,19 @@ def image_location(request,location_name):
     message = f"{location_name}"
     return render(request, 'img_location.html',{"message":message,"image": image,"location":location})
 
-def search_cat(request):
+def search_cat(request, category):
 
     location=Location.get_locations()
+    context= {
+        "images" : Image.search_by_category(category),
+        "message":f"{category}",
+        "category": category,
+        "location":location
+        }
 
+    return render(request, 'search.html', context=context)
+
+
+def search_temp(request):
     if 'category' in request.GET and request.GET["category"]:
-        category = request.GET.get("category")
-        search = Image.search_by_category(category)
-        message = f"{category}"
-        return render(request, 'search.html',{"message":message,"category": search,"location":location})
-    else:
-        return render(request, 'search.html')
+        return redirect('search_category', category=request.GET["category"])
