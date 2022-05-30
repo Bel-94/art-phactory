@@ -32,7 +32,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -168,14 +168,14 @@ django_heroku.settings(locals())
 
 # adding config
 cloudinary.config( 
-  cloud_name = "dz275mqsc", 
-  api_key = "883538243664336", 
-  api_secret = "kqfJDF9jde3JHj9ezi6TNz8s-HM" 
+  cloud_name = config('CLOUD_NAME'), 
+  api_key = config('API_KEY'), 
+  api_secret = config('API_SECRET') 
 )
 
-# CLOUDINARY_STORAGE = {
-#     'CLOUD_NAME': 'dz275mqsc',
-#     'API_KEY': '883538243664336',
-#     'API_SECRET': 'kqfJDF9jde3JHj9ezi6TNz8s-HM',
-#     'SECURE':'True',
-# }
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': config('CLOUD_NAME'),
+    'API_KEY': config('API_KEY'),
+    'API_SECRET': config('API_SECRET'),
+    'SECURE':'True',
+}
