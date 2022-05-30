@@ -1,4 +1,4 @@
-<h1>Your~Blogr</h1>
+<h1></h1>
 
 <h2>By Belinda Ntinyari<h2>
 
