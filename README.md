@@ -1,11 +1,8 @@
-<h1></h1>
+<h1>Portraiture~phactory</h1>
 
 <h2>By Belinda Ntinyari<h2>
 
-<p>This is a personal blog app where you can create and share your opinions and other users can read and comment on them. The users can also access random quotes to inspire them.</p>
-
-<h3>Description </h3>
-<p>This is an application where users can view random quotes and blogs.</p>
+<p>This is a personal gallery application that a user can use to display their photos for others to see.</p>
 
 <h3>Requirements for Installation</h3>
 <ul>
@@ -20,7 +17,7 @@ To get the code:
     <li>You can fork the project to add it as one of your repositories.
     <li>Clone the repo link from github</li>
     <li>Then clone the link in your machine using the following command: 
-    <p>git clone https://github.com/Bel-94/personal-blog.git</p>
+    <p>git clone https://github.com/Bel-94/art-phactory.git</p>
     </li>
 </ol>
 
@@ -28,20 +25,19 @@ To get the code:
 <p>The user is able to</p>
 
 <ul>
-    <li>The user will be able to view the blog posts on the site.</li>
-    <li>The user will be able to view the most recent posts.</li>
-    <li>The user can leave a comment. </li>
-    <li>The user can receive an email alert when a new post is made by joining a subscription. </li>
-    <li>The user can create a blog from the application</li>
-    <li>The user can delete comments that they don't like.</li>
-    <li>The user will be able to update/delete blogs they have created.</li>
+    <li>View different photos that interest them.</li>
+    <li>Click on a single photo and expand it and also view the details of the photo.</li>
+    <li>Search for different categories of photos. </li>
+    <li>Copy a link to the photo to share with the friends. </li>
+    <li>View photos based on location they were taken.</li>
 </ul>
 
 <h3>Technologies Used</h3>
 <ul>
-    <li>Python3.8 & Flask</li>
+    <li>Python3.8 & Django</li>
     <li>HTML</li>
     <li>CSS</li>
+    <li>JavaScript</li>
     <li>Heroku</li>
 </ul>
 
